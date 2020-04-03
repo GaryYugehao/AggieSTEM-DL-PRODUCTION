@@ -14,8 +14,8 @@ access_test(driver)
 # signup_test(driver, credentials)
 
 credentials = dict(
-    email='xuluming95@gmail.com',
-    password='xuluming'
+    email='gary19961231@tamu.edu',
+    password='12345678'
 )
 
 signin_test(driver, credentials)

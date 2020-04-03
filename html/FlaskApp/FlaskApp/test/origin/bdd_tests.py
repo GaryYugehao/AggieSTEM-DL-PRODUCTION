@@ -6,7 +6,7 @@ import re
 
 
 def access_test(driver: Chrome):
-    target_site = 'http://localhost:8080/'
+    target_site = 'http://localhost:5000/'
     driver.get(target_site)
 
     check_string = 'Hello, World! The Aggie STEM DL is currently down due to maintenance.. Please come back another time'
@@ -14,7 +14,7 @@ def access_test(driver: Chrome):
 
 
 def signup_test(driver: Chrome, credentials: dict):
-    target_site = 'http://localhost:8080/signup'
+    target_site = 'http://localhost:5000/signup'
     driver.get(target_site)
 
     username = driver.find_element_by_id('username')
@@ -59,7 +59,7 @@ def signup_test(driver: Chrome, credentials: dict):
 
 
 def signin_test(driver: Chrome, credentials: dict) -> None:
-    target_site = 'localhost:8080/signin'
+    target_site = 'localhost:5000/signin'
     driver.get(target_site)
 
     email = driver.find_element_by_id('email')
@@ -98,7 +98,7 @@ def search_test(driver: Chrome, search_keywords: str):
 
 
 def user_profile_test(driver: Chrome) -> None:
-    target_site = 'localhost:8080/user_profile'
+    target_site = 'localhost:5000/user_profile'
     driver.get(target_site)
     keywords = 'coco'
     search_test(driver, keywords)
