@@ -2,6 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from helper import selenium_init, get_random_credential
 from test import access_test, signup_wrong_password_test, signup_short_password_test, signup_wrong_email_test, signup_right_test, signin_test, user_profile_test
+from test_yuchen import dashboard_manageuser_test, dashboard_messageusers_test, dashboard_login_test, dashboard_logout_test
+import random
 
 driver = selenium_init()
 
@@ -11,23 +13,33 @@ access_test(driver)
 # signup_test(driver, credentials)
 
 credentials = dict(
-	username='606project12',
-	phone='97940156129',
-    email='xuluming19189@gmail.com',
-    wrong_email='yuchen.jiang011@outlook.com',
-    password='xuluming1213',
-    wrong_password='haonanya1',
-    short_password='1234516'
-)
+	username= "606"+''.join(random.sample('123456789abcdefg',6)) ,
+        phone= ''.join(random.sample('123456789',9)) ,
+        email=''.join(random.sample('123456789abcdefg',5)) +"@gmail.com",
+        wrong_email='yuchen.jiang0147@outlook.com',
+        password= ''.join(random.sample('123456789abcdefg',8)),
+        wrong_password='haona1ny30',
+        short_password='1234517'
+        )
 
-signup_wrong_password_test(driver, credentials)
+#signup_wrong_password_test(driver, credentials)
 
-signup_short_password_test(driver, credentials)
+#signup_short_password_test(driver, credentials)
 
-signup_wrong_email_test(driver, credentials)
+#signup_wrong_email_test(driver, credentials)
 
 signup_right_test(driver, credentials)
 
 signin_test(driver, credentials)
 
-user_profile_test(driver)
+dashboard_login_test(driver, credentials)
+
+#user_profile_test(driver)
+
+dashboard_logout_test(driver)
+
+#dashboard_manageuser_test(driver)
+
+#dashboard_messageusers_test(driver)
+
+
